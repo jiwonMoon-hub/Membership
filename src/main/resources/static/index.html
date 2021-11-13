@@ -1,14 +1,56 @@
-<!--<!doctype html>-->
-<!--<html lang="ko">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport"-->
-<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
-<!--    <title>Hello</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--Hello-->
-<!--<a href = "/hello">hello</a>-->
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org", lang="ko">
+<head>
+    <title>Register Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/templates/index.css">
+    <script type="text/javascript" src="/templates/index.js"></script>
 
-<!--</body>-->
-<!--</html>-->
+</head>
+<div class="wrap">
+    <div class="form-wrap">
+        <div class="button-wrap">
+            <div id="btn"></div>
+            <button type="button" class="togglebtn" onclick="login()">LOGIN</button>
+            <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
+        </div>
+        <div class="social-icons">
+            <img src="../templates/img/fb.png" alt="facebook">
+            <img src="../templates/img/tw.png" alt="twitter">
+            <img src="../templates/img/gl.png" alt="google">
+        </div>
+        <form id="login" action="" class="input-group">
+            <input type="text" class="input-field" placeholder="User name or Email" required>
+            <input type="password" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="checkbox"><span>Remember Password</span>
+            <button class="submit">Login</button>
+        </form>
+        <form id="register" action="" class="input-group">
+            <input type="text" class="input-field" placeholder="User name or Email" required>
+            <input type="email" class="input-field" placeholder="Your Email" required>
+            <input type="password" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="checkbox"><span>Terms and conditions</span>
+            <button class="submit">REGISTER</button>
+        </form>
+    </div>
+</div>
+<script>
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    var z = document.getElementById("btn");
+
+
+    function login(){
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+    }
+
+    function register(){
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+    }
+</script>
+</body>
+</html>
