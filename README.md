@@ -1,4 +1,4 @@
-### Membership test code
+# Membership test code
 회원가입에 필요한 기능 TEST
 1. 회원가입
 2. 로그인
