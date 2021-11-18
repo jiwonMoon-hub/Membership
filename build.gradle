@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.3.RELEASE'
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 }
@@ -10,9 +10,17 @@ repositories {
 	mavenCentral()
 }
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.projectlombok:lombok:1.18.20'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+		//스프링 시큐리티를 사용하기 위해 추가
+		implementation 'org.springframework.boot:spring-boot-starter-security'
+		// 뷰 단에서 현재 로그인된 사용자의 정보를 가져오기 위해 추가
+		implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+
 	}
 }
 test {

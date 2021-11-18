@@ -3,8 +3,8 @@
 <head>
     <title>Register Test</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="/templates/index.css">
-    <script type="text/javascript" src="/templates/index.js"></script>
+    <link rel="stylesheet" href="/templates/css/index.css">
+
 
 </head>
 <div class="wrap">
@@ -19,38 +19,24 @@
             <img src="../templates/img/tw.png" alt="twitter">
             <img src="../templates/img/gl.png" alt="google">
         </div>
+<!--        로그인-->
         <form id="login" action="" class="input-group">
-            <input type="text" class="input-field" placeholder="User name or Email" required>
-            <input type="password" class="input-field" placeholder="Enter Password" required>
+            <input type="text" class="input-field" placeholder="User ID" required>
+            <input type="password" class="input-field" placeholder="User Password" required>
             <input type="checkbox" class="checkbox"><span>Remember Password</span>
             <button class="submit">Login</button>
         </form>
+<!--        회원가입-->
         <form id="register" action="" class="input-group">
-            <input type="text" class="input-field" placeholder="User name or Email" required>
-            <input type="email" class="input-field" placeholder="Your Email" required>
+            <input type="text" class="input-field" placeholder="User ID" required>
+            <input type="password" class="input-field" placeholder="User Password" required>
             <input type="password" class="input-field" placeholder="Enter Password" required>
-            <input type="checkbox" class="checkbox"><span>Terms and conditions</span>
+            <input type="email" class="input-field" placeholder="Your Email" required>
+            <input type="checkbox" class="checkbox"><span>회원 가입을 동의 하시겠습니까?</span>
             <button class="submit">REGISTER</button>
         </form>
     </div>
 </div>
-<script>
-    var x = document.getElementById("login");
-    var y = document.getElementById("register");
-    var z = document.getElementById("btn");
-
-
-    function login(){
-        x.style.left = "50px";
-        y.style.left = "450px";
-        z.style.left = "0";
-    }
-
-    function register(){
-        x.style.left = "-400px";
-        y.style.left = "50px";
-        z.style.left = "110px";
-    }
-</script>
+<script src="/templates/js/index.js"></script>
 </body>
 </html>
