@@ -44,9 +44,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception { // 9
-        auth.userDetailsService(userService)
+        auth.userDetailsService(userService).passwordEncoder(new BCryptPasswordEncoder());
                 // 해당 서비스(userService)에서는 UserDetailsService를 implements해서
                 // loadUserByUsername() 구현해야함 (서비스 참고)
-                .passwordEncoder(new BCryptPasswordEncoder());
+
     }
 }
