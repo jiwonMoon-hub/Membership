@@ -1,10 +1,13 @@
-package testProject.membership.member;
+package testProject.membership.member.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import testProject.membership.member.domain.UserInfo;
+import testProject.membership.member.dto.UserInfoDTO;
+import testProject.membership.member.repository.UserRepository;
 
 @RequiredArgsConstructor
 @Service

@@ -1,4 +1,4 @@
-package testProject.membership.member;
+package testProject.membership.member.domain;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -16,15 +16,17 @@ import javax.persistence.GenerationType;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+/*
+Spring Data JPA
+ */
+@NoArgsConstructor(access = AccessLevel.PROTECTED)// 파라미터가 없는 생성자를 생성
 @Entity
 @Getter
 public class UserInfo implements UserDetails {
 
     @Id
     @Column(name = "code")
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)// DB에 위임을 통해 자동생성
     private Long code;
 
     @Column(name = "email", unique = true)
@@ -35,6 +37,7 @@ public class UserInfo implements UserDetails {
 
     @Column(name = "auth")
     private String auth;
+
     @javax.persistence.Id
     private Long id;
 

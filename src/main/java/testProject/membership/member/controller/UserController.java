@@ -1,8 +1,7 @@
-package testProject.membership.member;
-import testProject.membership.member.UserInfoDTO;
-import testProject.membership.member.UserService;
+package testProject.membership.member.controller;
+import testProject.membership.member.dto.UserInfoDTO;
+import testProject.membership.member.service.UserService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;

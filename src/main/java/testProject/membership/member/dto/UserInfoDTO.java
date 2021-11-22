@@ -1,4 +1,4 @@
-package testProject.membership.member;
+package testProject.membership.member.dto;
 
 import lombok.Getter;
 import lombok.Setter;
