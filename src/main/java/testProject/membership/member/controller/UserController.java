@@ -15,13 +15,17 @@ import javax.servlet.http.HttpServletResponse;
 public class UserController {
 
     private final UserService userService;
-
+    /*
+    /user로 Post 요청이 들어오면
+    UserServicedml의 save()를 호출한 뒤에 /login으로 이동
+    */
     @PostMapping("/user")
     public String signup(UserInfoDTO infoDto) { // 회원 추가
         userService.save(infoDto);
         return "redirect:/login";
     }
-    // 추가
+
+    // 로그아웃 처리 SecurityContextLogoutHandler() 사용
     @GetMapping(value = "/logout")
     public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
         new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());

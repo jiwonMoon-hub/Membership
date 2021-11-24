@@ -1,10 +1,10 @@
 package testProject.membership.member.repository;
 
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import testProject.membership.member.domain.UserInfo;
 
-import java.util.Optional;
-
-public interface UserRepository extends JpaRepository<UserInfo, Long> {
-    Optional<UserInfo> findByEmail(String email);
+public interface UserRepository extends JpaRepository<UserInfo, Long>
+{
+    Optional<UserInfo> findById(String id);
 }

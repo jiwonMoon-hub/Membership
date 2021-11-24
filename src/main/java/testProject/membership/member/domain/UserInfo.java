@@ -18,19 +18,22 @@ import java.util.HashSet;
 import java.util.Set;
 /*
 Spring Data JPA
+식별자를 직접 할당하여 관리
  */
 @NoArgsConstructor(access = AccessLevel.PROTECTED)// 파라미터가 없는 생성자를 생성
 @Entity
+//@javax.persistence.Table(name="user_info")
 @Getter
 public class UserInfo implements UserDetails {
 
-    @Id
-    @Column(name = "code")
-    @GeneratedValue(strategy= GenerationType.IDENTITY)// DB에 위임을 통해 자동생성
+    @Id // 직접할당
+    @javax.persistence.Id //Prime Key
+    @Column(name = "code") //Entity Key?
+    @GeneratedValue(strategy= GenerationType.IDENTITY)// DB에 위임을 통해 기본 키 생성
     private Long code;
 
-    @Column(name = "email", unique = true)
-    private String email;
+    @Column(name = "id", unique = true)
+    private String id;
 
     @Column(name = "password")
     private String password;
@@ -38,12 +41,9 @@ public class UserInfo implements UserDetails {
     @Column(name = "auth")
     private String auth;
 
-    @javax.persistence.Id
-    private Long id;
-
     @Builder
-    public UserInfo(String email, String password, String auth) {
-        this.email = email;
+    public UserInfo(String id, String password, String auth) {
+        this.id = id;
         this.password = password;
         this.auth = auth;
     }
@@ -62,7 +62,7 @@ public class UserInfo implements UserDetails {
     // 사용자의 id를 반환 (unique한 값)
     @Override
     public String getUsername() {
-        return email;
+        return id;
     }
 
     // 사용자의 password를 반환
