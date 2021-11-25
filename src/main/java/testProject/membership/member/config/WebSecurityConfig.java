@@ -50,12 +50,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true) // 세샨 정보 삭제 여부
         ;
     }
-//로그인 할떄 필요한 정보를 가져오는 곳
+    //로그인 할떄 필요한 정보를 가져오는 곳
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService).passwordEncoder(new BCryptPasswordEncoder());
-                // 해당 서비스(userService)에서는 UserDetailsService를 implements해서
-                // loadUserByUsername() 구현해야함 (서비스 참고)
+        // 해당 서비스(userService)에서는 UserDetailsService를 implements해서
+        // loadUserByUsername() 구현해야함 (서비스 참고)
 
     }
 }
